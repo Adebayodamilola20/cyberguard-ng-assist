@@ -13,6 +13,14 @@ import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard.index'
+import { Route as DashboardTrainingRouteImport } from './routes/dashboard.training'
+import { Route as DashboardSettingsRouteImport } from './routes/dashboard.settings'
+import { Route as DashboardScamDetectorRouteImport } from './routes/dashboard.scam-detector'
+import { Route as DashboardReportsRouteImport } from './routes/dashboard.reports'
+import { Route as DashboardComplianceRouteImport } from './routes/dashboard.compliance'
+import { Route as DashboardBreachMonitorRouteImport } from './routes/dashboard.breach-monitor'
+import { Route as DashboardAssistantRouteImport } from './routes/dashboard.assistant'
+import { Route as DashboardAlertsRouteImport } from './routes/dashboard.alerts'
 
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
@@ -34,16 +42,72 @@ const DashboardIndexRoute = DashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => DashboardRoute,
 } as any)
+const DashboardTrainingRoute = DashboardTrainingRouteImport.update({
+  id: '/training',
+  path: '/training',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardScamDetectorRoute = DashboardScamDetectorRouteImport.update({
+  id: '/scam-detector',
+  path: '/scam-detector',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardReportsRoute = DashboardReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardComplianceRoute = DashboardComplianceRouteImport.update({
+  id: '/compliance',
+  path: '/compliance',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardBreachMonitorRoute = DashboardBreachMonitorRouteImport.update({
+  id: '/breach-monitor',
+  path: '/breach-monitor',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAssistantRoute = DashboardAssistantRouteImport.update({
+  id: '/assistant',
+  path: '/assistant',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardAlertsRoute = DashboardAlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
+  getParentRoute: () => DashboardRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRouteWithChildren
+  '/dashboard/alerts': typeof DashboardAlertsRoute
+  '/dashboard/assistant': typeof DashboardAssistantRoute
+  '/dashboard/breach-monitor': typeof DashboardBreachMonitorRoute
+  '/dashboard/compliance': typeof DashboardComplianceRoute
+  '/dashboard/reports': typeof DashboardReportsRoute
+  '/dashboard/scam-detector': typeof DashboardScamDetectorRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/dashboard/training': typeof DashboardTrainingRoute
   '/dashboard/': typeof DashboardIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/dashboard/alerts': typeof DashboardAlertsRoute
+  '/dashboard/assistant': typeof DashboardAssistantRoute
+  '/dashboard/breach-monitor': typeof DashboardBreachMonitorRoute
+  '/dashboard/compliance': typeof DashboardComplianceRoute
+  '/dashboard/reports': typeof DashboardReportsRoute
+  '/dashboard/scam-detector': typeof DashboardScamDetectorRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/dashboard/training': typeof DashboardTrainingRoute
   '/dashboard': typeof DashboardIndexRoute
 }
 export interface FileRoutesById {
@@ -51,14 +115,58 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRouteWithChildren
+  '/dashboard/alerts': typeof DashboardAlertsRoute
+  '/dashboard/assistant': typeof DashboardAssistantRoute
+  '/dashboard/breach-monitor': typeof DashboardBreachMonitorRoute
+  '/dashboard/compliance': typeof DashboardComplianceRoute
+  '/dashboard/reports': typeof DashboardReportsRoute
+  '/dashboard/scam-detector': typeof DashboardScamDetectorRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/dashboard/training': typeof DashboardTrainingRoute
   '/dashboard/': typeof DashboardIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/auth' | '/dashboard' | '/dashboard/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/dashboard'
+    | '/dashboard/alerts'
+    | '/dashboard/assistant'
+    | '/dashboard/breach-monitor'
+    | '/dashboard/compliance'
+    | '/dashboard/reports'
+    | '/dashboard/scam-detector'
+    | '/dashboard/settings'
+    | '/dashboard/training'
+    | '/dashboard/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/auth' | '/dashboard'
-  id: '__root__' | '/' | '/auth' | '/dashboard' | '/dashboard/'
+  to:
+    | '/'
+    | '/auth'
+    | '/dashboard/alerts'
+    | '/dashboard/assistant'
+    | '/dashboard/breach-monitor'
+    | '/dashboard/compliance'
+    | '/dashboard/reports'
+    | '/dashboard/scam-detector'
+    | '/dashboard/settings'
+    | '/dashboard/training'
+    | '/dashboard'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/dashboard'
+    | '/dashboard/alerts'
+    | '/dashboard/assistant'
+    | '/dashboard/breach-monitor'
+    | '/dashboard/compliance'
+    | '/dashboard/reports'
+    | '/dashboard/scam-detector'
+    | '/dashboard/settings'
+    | '/dashboard/training'
+    | '/dashboard/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -97,14 +205,86 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
+    '/dashboard/training': {
+      id: '/dashboard/training'
+      path: '/training'
+      fullPath: '/dashboard/training'
+      preLoaderRoute: typeof DashboardTrainingRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/settings': {
+      id: '/dashboard/settings'
+      path: '/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof DashboardSettingsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/scam-detector': {
+      id: '/dashboard/scam-detector'
+      path: '/scam-detector'
+      fullPath: '/dashboard/scam-detector'
+      preLoaderRoute: typeof DashboardScamDetectorRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/reports': {
+      id: '/dashboard/reports'
+      path: '/reports'
+      fullPath: '/dashboard/reports'
+      preLoaderRoute: typeof DashboardReportsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/compliance': {
+      id: '/dashboard/compliance'
+      path: '/compliance'
+      fullPath: '/dashboard/compliance'
+      preLoaderRoute: typeof DashboardComplianceRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/breach-monitor': {
+      id: '/dashboard/breach-monitor'
+      path: '/breach-monitor'
+      fullPath: '/dashboard/breach-monitor'
+      preLoaderRoute: typeof DashboardBreachMonitorRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/assistant': {
+      id: '/dashboard/assistant'
+      path: '/assistant'
+      fullPath: '/dashboard/assistant'
+      preLoaderRoute: typeof DashboardAssistantRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/alerts': {
+      id: '/dashboard/alerts'
+      path: '/alerts'
+      fullPath: '/dashboard/alerts'
+      preLoaderRoute: typeof DashboardAlertsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
   }
 }
 
 interface DashboardRouteChildren {
+  DashboardAlertsRoute: typeof DashboardAlertsRoute
+  DashboardAssistantRoute: typeof DashboardAssistantRoute
+  DashboardBreachMonitorRoute: typeof DashboardBreachMonitorRoute
+  DashboardComplianceRoute: typeof DashboardComplianceRoute
+  DashboardReportsRoute: typeof DashboardReportsRoute
+  DashboardScamDetectorRoute: typeof DashboardScamDetectorRoute
+  DashboardSettingsRoute: typeof DashboardSettingsRoute
+  DashboardTrainingRoute: typeof DashboardTrainingRoute
   DashboardIndexRoute: typeof DashboardIndexRoute
 }
 
 const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardAlertsRoute: DashboardAlertsRoute,
+  DashboardAssistantRoute: DashboardAssistantRoute,
+  DashboardBreachMonitorRoute: DashboardBreachMonitorRoute,
+  DashboardComplianceRoute: DashboardComplianceRoute,
+  DashboardReportsRoute: DashboardReportsRoute,
+  DashboardScamDetectorRoute: DashboardScamDetectorRoute,
+  DashboardSettingsRoute: DashboardSettingsRoute,
+  DashboardTrainingRoute: DashboardTrainingRoute,
   DashboardIndexRoute: DashboardIndexRoute,
 }
 
@@ -120,3 +300,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
