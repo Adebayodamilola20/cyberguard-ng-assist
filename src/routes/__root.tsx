@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "CyberGuard NG — Your AI Security Team for Every Business" },
       { name: "description", content: "AI-powered cybersecurity for Nigerian SMEs. Detect scams, monitor breaches, train employees and stay NDPA compliant from one dashboard." },
       { name: "author", content: "CyberGuard NG" },
-      { name: "theme-color", content: "#0b1411" },
+      { name: "theme-color", content: "#b2e0d5" },
       { property: "og:title", content: "CyberGuard NG — AI Security for Nigerian SMEs" },
       { property: "og:description", content: "Detect scams, monitor breaches, train employees and stay NDPA compliant from one intelligent dashboard." },
       { property: "og:type", content: "website" },
@@ -116,7 +116,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <HeadContent />
       </head>
