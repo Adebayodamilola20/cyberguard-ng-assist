@@ -233,7 +233,7 @@ function Index() {
                 <span className="font-mono">app.cyberguard.ng / overview</span>
                 <span className="rounded border border-border px-2 py-0.5 text-[10px] uppercase tracking-widest">Live</span>
               </div>
-              <div className="grid gap-3 p-4 md:grid-cols-2">
+              <div className="grid gap-3 p-4 md:grid-cols-2 overflow-x-auto">
                 <div className="rounded-2xl border border-border bg-background p-5">
                   <div className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Security score</div>
                   <div className="mt-2 flex items-end gap-2">
@@ -314,7 +314,7 @@ function Index() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div key={f.title} className="group bg-card p-8 transition-colors hover:bg-accent/40">
               <div className="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary">
