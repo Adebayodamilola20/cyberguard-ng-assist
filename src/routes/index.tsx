@@ -197,7 +197,7 @@ function Index() {
               </span>
               AI-powered security · built for Nigeria
             </Badge>
-            <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-balance lg:text-7xl">
+            <h1 className="font-display text-4xl sm:text-5xl font-bold leading-[1.05] tracking-tight text-balance lg:text-7xl">
               Your AI Security Team for{" "}
               <span className="text-primary">Every Business.</span>
             </h1>
