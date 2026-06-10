@@ -12,4 +12,11 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  nitro: {
+    preset: "vercel",
+    // Ensure the output is placed where Vercel expects a serverless function
+    output: {
+      server: "server",
+    },
+  },
 });
